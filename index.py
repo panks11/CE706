@@ -43,3 +43,46 @@ body = ("""{
 }
   
 }""")
+
+query1 = """
+{
+"query": {
+"bool": {
+"must": {
+"match": {
+"media-type": "News"
+}
+},
+"filter": {
+"term": {
+"source": "4 Traders"
+}
+}
+}
+},
+"sort": { "published": { "order": "desc" } }
+}"""
+
+query2 ="""{
+  "size":0,
+  "aggs": {
+    "Articles": {
+      "filters": {
+        "filters": {
+          "Blog": {"term":{"media-type": "Blog"}},
+          "News":{"term":{"media-type":"News"}}
+        }
+      }
+    }
+  }
+}"""
+
+
+query3 = """{
+  "query": {
+    "query_string": {
+      "query": "Scotland^1.7",
+      "default_field": "content"
+    }
+  }
+}"""
