@@ -19,7 +19,7 @@ def post_documents(index_name, doc_type, document_list):
         resp = es.index(index = index_name, id = result['id'], body = doc, doc_type = doc_type)
         print("Posted doc : ", result['id'])
 
-if __name__ == 'main':
+if __name__ == '__main__':
     index_name = 'articles'
     doc_type = 'news'
     # setup Elastic Search Connection
