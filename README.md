@@ -1,4 +1,4 @@
-# CE706
+# CE706 : Information Retrieval using Elastic Search
 
 ### Post documents to Elastic Search
 ```
